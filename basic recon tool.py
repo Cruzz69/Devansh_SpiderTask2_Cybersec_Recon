@@ -16,10 +16,10 @@ from datetime import datetime
 parser = argparse.ArgumentParser(description="Intermediate Recon Toolkit")
 parser.add_argument("domain", help="Target domain")
 parser.add_argument("--portscan", action="store_true", help="Run port scan and banner grab")
-parser.add_argument("--techdetect", action="store_true", help="Detect technologies used by website")
-parser.add_argument("--shodan", action="store_true", help="Run Shodan lookup (requires API key)")
-parser.add_argument("--emails", action="store_true", help="Harvest emails via Bing scraping")
-parser.add_argument("--json", action="store_true", help="Save output as JSON (default is CSV)")
+parser.add_argument("--techdetect", action="store_true", help="technology used by website")
+parser.add_argument("--shodan", action="store_true", help="Run Shodan lookup")
+parser.add_argument("--emails", action="store_true", help="Harvest emails [scraping]")
+parser.add_argument("--json", action="store_true", help="Save output as JSON")
 args = parser.parse_args()
 
 domain = args.domain
@@ -132,7 +132,7 @@ def shodan_lookup(domain):
     print("[*] Performing Shodan lookup ...")
     try:
         ip = socket.gethostbyname(domain)
-        SHODAN_API_KEY = "YOUR_SHODAN_API_KEY_HERE"  # Replace with your key
+        SHODAN_API_KEY = "urapi(whywouldishowmine)"
         api = shodan.Shodan(SHODAN_API_KEY)
         result = api.host(ip)
         return {
@@ -206,3 +206,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+#formatted by chatgpt
